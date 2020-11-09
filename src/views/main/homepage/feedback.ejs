@@ -1,0 +1,79 @@
+<% extend("../app.ejs") %>
+<section class="detail-nav">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="menu-title text-decoration-none">
+                        <a href="/" class="text-decoration-none">
+                            <img class="menu-nav" src="/images/background/smile.png" alt="img logo">
+                            <span class="text-decoration-none">Doctors care</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-8 d-flex flex-row justify-content-center align-self-center menu-type">
+                    <span class="d-block"><a href="/" class="text-decoration-none">TRANG CHỦ</a></span>
+                    <span class="d-block mx-5"><a href="/for-patients" class="text-decoration-none">DÀNH CHO BỆNH NHÂN</a></span>
+                    <span class="d-block"><a href="/for-doctors" class="text-decoration-none">DÀNH CHO BÁC SĨ</a></span>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <span><a href=" <%= process.env.URL_CHAT_SUPPORT %>" target="_blank" class="text-decoration-none">Bạn cần hỗ trợ?</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="detail-info-specialization">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <a class="text-decoration-none" href="/">TRANG CHỦ </a><span aria-hidden="true">&raquo;</span>
+                    <span style="text-transform: uppercase">
+                    Gửi ý kiến phản hồi
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="detail-info-clinic mt-3">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 mx-auto">
+                    <h2>Gửi ý kiến phản hồi sau khi đi khám bệnh</h2>
+                    <hr>
+                    <div>
+                        Phản hồi của bạn sẽ giúp những người khác dễ dàng hơn trong việc lựa chọn bác sĩ phù hợp.
+                    </div>
+                    <div class="mt-2">
+                        Bạn vui lòng cho ý kiến sau khi đi khám với Bác sĩ <%= doctor.name %>
+                    </div>
+                    <form id="formFeedBack">
+                        <div class="form-row mt-4">
+                            <div class="col">
+                                <label for="feedbackName">Họ và tên </label>
+                                <input class="form-control" name="feedbackName" id="feedbackName" type="text"
+                                       placeholder="Họ và tên (bắt buộc)">
+                            </div>
+                            <div class="col">
+                                <label for="feedbackPhone">Số điện thoại</label>
+                                <input class="form-control" name="feedbackPhone" id="feedbackPhone" type="text"
+                                       placeholder="Số điện thoại (bắt buộc)">
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="feedbackContent">Nội dung phản hồi</label>
+                            <textarea class="form-control" name="feedbackContent" id="feedbackContent"
+                                      type="text"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <button type="button" class="btn btn-primary" data-doctor-id="<%= doctor.id %>" id="sendFeedback">Xác nhận</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

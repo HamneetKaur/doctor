@@ -1,0 +1,72 @@
+<% extend("master.ejs") %>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Thêm bác sĩ</h1>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+    <div class="col-10 mx-auto">
+        <form  id="formCreateNewDoctor">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Họ tên</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Họ tên">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="clinic">Phòng khám</label>
+                    <select id="clinic" class="form-control" name="clinic">
+                        <option selected>Chọn phòng khám</option>
+                        <% clinics.forEach(function(x) { %>
+                            <option value="<%= x.id %>"> <%= x.name %> </option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="specialization">Chuyên khoa</label>
+                    <select id="specialization" class="form-control" name="specialization">
+                        <option selected>Chọn chuyên khoa</option>
+                        <% specializations.forEach(function(x) { %>
+                            <option value="<%= x.id %>"> <%= x.name %> </option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Địa chỉ</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Địa chỉ">
+            </div>
+            <div class="form-group">
+                <label for="description">Miêu tả</label>
+                <textarea id="description" class="form-control" name="description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="createNewDoctor">Tạo mới</button>
+        </form>
+    </div>
+</div>
+
+<!-- Content Row -->
+<script>
+    $(document).ready(function() {
+        $("div #featureManage").addClass('show');
+        $("div #featureManage").find($("#aManageDoctor")).addClass("active");
+    })
+</script>

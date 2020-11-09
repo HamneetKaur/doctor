@@ -1,0 +1,62 @@
+<% extend("../app.ejs") %>
+<section class="detail-nav">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="menu-title text-decoration-none">
+                        <a href="/" class="text-decoration-none">
+                            <img class="menu-nav" src="/images/background/smile.png" alt="img logo">
+                            <span class="text-decoration-none">Doctors care</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-8 d-flex flex-row justify-content-center align-self-center menu-type">
+                    <span class="d-block"><a href="/" class="text-decoration-none">TRANG CHỦ</a></span>
+                    <span class="d-block mx-5"><a href="/for-patients" class="text-decoration-none">DÀNH CHO BỆNH NHÂN</a></span>
+                    <span class="d-block"><a href="/for-doctors" class="text-decoration-none">DÀNH CHO BÁC SĨ</a></span>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <span><a href=" <%= process.env.URL_CHAT_SUPPORT %>" target="_blank" class="text-decoration-none">Bạn cần hỗ trợ?</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="detail-info-specialization">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <a class="text-decoration-none" href="/">TRANG CHỦ </a><span aria-hidden="true">&raquo;</span>
+                    <span style="text-transform: uppercase">
+                    Thông tin đặt lịch
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="detail-info-booking mt-3">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 mx-auto">
+                    <h2>Đặt lịch khám thành công!</h2>
+                    <hr>
+                    <div class="booking-success row">
+                        <div class="right-booking col-3 d-flex flex-column ">
+                                <img src="/images/users/<%= patient.getDataValue('doctorAvatar')%>">
+                                <div class="mt-2"><%= patient.getDataValue('doctorName')%></div>
+                        </div>
+                        <div class="left-booking col-9 mt-3">
+                            <div> Cảm ơn bạn đã đặt lịch khám từ DoctorCare. Hệ thống đã ghi nhận lịch hẹn.
+                            Nhân viên hỗ trợ sẽ gọi điện xác nhận trong thời gian 24h kể từ khi đặt lịch.</div>
+                            <div class="mt-2">Cần hỗ trợ vui lòng liên hệ hotline: 1900 00 11 22 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

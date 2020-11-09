@@ -1,0 +1,96 @@
+<% extend("../app.ejs") %>
+<section class="detail-nav">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="menu-title text-decoration-none">
+                        <a href="/" class="text-decoration-none">
+                            <img class="menu-nav" src="/images/background/smile.png" alt="img logo">
+                            <span class="text-decoration-none">Doctors care</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-8 d-flex flex-row justify-content-center align-self-center menu-type">
+                    <span class="d-block"><a href="/" class="text-decoration-none">TRANG CHỦ</a></span>
+                    <span class="d-block mx-5"><a href="/for-patients" class="text-decoration-none">DÀNH CHO BỆNH NHÂN</a></span>
+                    <span class="d-block"><a href="/for-doctors" class="text-decoration-none">DÀNH CHO BÁC SĨ</a></span>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <span><a href=" <%= process.env.URL_CHAT_SUPPORT %>" target="_blank" class="text-decoration-none">Bạn cần hỗ trợ?</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="detail-info-specialization">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <a class="text-decoration-none" href="/">TRANG CHỦ </a><span aria-hidden="true">&raquo;</span>
+                    <span style="text-transform: uppercase">
+                    Liên hệ hợp tác
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="detail-info-clinic mt-3">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 mx-auto">
+                    <h2>Hợp tác cùng DoctorCare</h2>
+                    <hr>
+                    <div>
+                        BookingCare rất hân hạnh được hợp tác với bác sĩ và cơ sở y tế. Vui lòng gửi thông tin, chúng
+                        tôi sẽ liên hệ lại trong thời gian sớm nhất. rất hân hạnh được hợp tác với bác sĩ và cơ sở y tế.
+                        Vui lòng gửi thông tin, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.
+                    </div>
+                    <form>
+                        <div class="form-row mt-4">
+                            <div class="col">
+                                <label for="contactName">Người liên hệ</label>
+                                <input class="form-control" name="contactName" id="contactName" type="text"
+                                       placeholder="Người liên hệ">
+                            </div>
+                            <div class="col">
+                                <label for="contactEmail">Địa chỉ email</label>
+                                <input class="form-control" name="contactEmail" id="contactEmail" type="text"
+                                       placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-row mt-2">
+                            <div class="col-5">
+                                <label for="contactPhone">Số điện thoại</label>
+                                <input class="form-control" name="contactPhone" id="contactPhone" type="text"
+                                       placeholder="Số điện thoại">
+                            </div>
+                            <div class="col-7">
+                                <label for="contactCompany">Tên cơ sở y tế</label>
+                                <input class="form-control" name="contactCompany" id="contactCompany" type="text"
+                                       placeholder="Bệnh viện, phòng khám, tổ chức, công ty">
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="contactAddress">Địa chỉ</label>
+                            <input class="form-control" name="contactName" id="contactName" type="text"
+                                   placeholder="Địa chỉ">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="contactContent">Nội dung</label>
+                            <textarea class="form-control" name="contactContent" id="contactContent"
+                                      type="text"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <button type="button" class="btn btn-primary" id="sendContact">Gửi thông tin</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

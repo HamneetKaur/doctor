@@ -1,0 +1,89 @@
+<% extend("master.ejs") %>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Cập nhật thông tin bác sĩ</h1>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+    <div class="col-10 mx-auto">
+        <form id="formUpdateDoctor">
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="nameDoctor">Tên bác sĩ</label>
+                    <input type="text" class="form-control" id="nameDoctor" name="nameDoctor" placeholder="Tên bác sĩ"
+                           value="<%= doctor.name %>">
+                </div>
+                <div class="form-group col-6">
+                    <label for="phoneDoctor">Số điện thoại</label>
+                    <input type="text" class="form-control" id="phoneDoctor" name="phoneDoctor" placeholder="Số điện thoại"
+                           value="<%= doctor.phone %>">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="specializationDoctor">Chuyên khoa</label>
+                    <select id="specializationDoctor" class="form-control" name="specializationDoctor">
+                        <% if(doctor.Doctor_User){ %>
+                            <% specializations.forEach(function(x) { %>
+                                <option value="<%= x.id %>" <% if(x.id === doctor.Doctor_User.specializationId) {%> selected <%}%>> <%= x.name %> </option>
+                            <% }) %>
+                           <%} else {%>
+                                    <option selected value="-1">Chọn chuyên khoa</option>
+                                <% specializations.forEach(function(x) { %>
+                                    <option value="<%= x.id %>"> <%= x.name %> </option>
+                                <% }) %>
+                            <%}%>
+                    </select>
+                </div>
+                <div class="form-group col-6">
+                    <label for="clinicDoctor">Phòng khám</label>
+                    <select id="clinicDoctor" class="form-control" name="clinicDoctor">
+                        <% if(doctor.Doctor_User){ %>
+                            <% clinics.forEach(function(x) { %>
+                                <option value="<%= x.id %>" <% if(x.id === doctor.Doctor_User.clinicId) {%> selected <%}%>> <%= x.name %> </option>
+                            <% }) %>
+                        <%}else {%>
+                                <option selected value="-1">Chọn phòng khám</option>
+                            <% clinics.forEach(function(x) { %>
+                                    <option value="<%= x.id %>" > <%= x.name %> </option>
+                                <% }) %>
+                        <%}%>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="addressDoctor">Địa chỉ</label>
+                <input type="text" class="form-control" id="addressDoctor" name="addressDoctor" placeholder="Địa chỉ"
+                       value="<%= doctor.address %>">
+            </div>
+            <div class="form-group">
+                <label for="introEditDoctor">Giới thiệu chung</label>
+                <textarea id="introEditDoctor" name="introEditDoctor" class="form-control"> <%= doctor.description %>  </textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="image-clinic">Cập nhật ảnh đại diện</label>
+                <input type="file" id="image-clinic" accept="image/*" onchange="loadFile(event)">
+            </div>
+
+            <div class="form-group">
+                <% if(doctor.avatar) { %>
+                    <img class="img-preview-clinic-create" id="image-preview" src="/images/users/<%= doctor.avatar %>">
+                <% } else { %>
+                    <img class="img-preview-clinic-create d-none" id="image-preview">
+                <% } %>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="btnUpdateDoctor" data-doctor-id="<%= doctor.id %>">Cập nhật</button>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("div #featureManage").addClass('show');
+        $("div #featureManage").find($("#aManageDoctor")).addClass("active");
+    })
+</script>
