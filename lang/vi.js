@@ -1,5 +1,5 @@
 export const transValidation = {
-    email_incorrect: "Địa chỉ email không hợp lệ",
+    email_incorrect: "Address email không hợp lệ",
     gender_incorrect: "Invalid gender",
     password_incorrect: "Mật khẩu có ít nhất 6 kí tự",
     password_confirmation_incorrect: "Mật khẩu nhập lại không chính xác",

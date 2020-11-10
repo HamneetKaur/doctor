@@ -254,7 +254,7 @@ function createNewDoctor() {
             url: `${window.location.origin}/admin/doctor/create`,
             data: data,
             success: function(data) {
-                alert('Tạo mới bác sĩ thành công');
+                alert('Create bác sĩ thành công');
                 window.location.href = `${window.location.origin}/users/manage/doctor`;
             },
             error: function(error) {
