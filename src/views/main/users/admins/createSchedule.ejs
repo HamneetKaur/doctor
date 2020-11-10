@@ -1,7 +1,7 @@
 <% extend("master.ejs") %>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Thêm lịch khám</h1>
+    <h1 class="h3 mb-0 text-gray-800">Add a clinic schedule</h1>
 </div>
 
 <!-- Content Row -->
@@ -9,7 +9,7 @@
     <div class="col-10 mx-auto">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="datepicker">Chọn ngày:</label>
+                <label for="datepicker">Select date:</label>
                 <input class="form-control" data-date-format="dd/mm/yyyy" id="datepicker">
             </div>
             <div class="form-group col-md-6">
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="mb-4">
-            <span>Chọn khoảng thời gian:</span>
+            <span>Select time period:</span>
             <div id="lsBtnSchedule">
                 <button id="time-08-09" type="button" class="btn  btn-light mr-3 my-3 btn-schedule" value="08:00 - 09:00"> 08:00 - 09:00
                 </button>
@@ -39,16 +39,16 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary mb-3" id="createNewScheduleDoctor">Lưu lại</button>
+        <button type="button" class="btn btn-primary mb-3" id="createNewScheduleDoctor">Save</button>
 
         <div>
-            <span>Khoảng đã chọn:(chưa lưu)</span>
+            <span>Selected range: (not saved)</span>
             <div>
                 <table class="table table-bordered" id="tableCreateSchedule" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Khoảng thời gian</th>
-                        <th>Ngày</th>
+                        <th>Range</th>
+                        <th>Date</th>
                     </tr>
                     </thead>
                     <tbody>

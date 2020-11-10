@@ -1,21 +1,21 @@
 <% extend("master.ejs") %>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Danh sách lịch hẹn khám</h1>
+    <h1 class="h3 mb-0 text-gray-800">List of appointment appointments</h1>
 
 </div>
 
 <!-- Content Row -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh sách lịch hẹn khám</h6>
+        <h6 class="m-0 font-weight-bold text-primary">List of appointment appointments</h6>
         <div class="my-3">
-            <label for="dateDoctorAppointment">Thời gian: </label>
+            <label for="dateDoctorAppointment">Time: </label>
             <form method="GET" action="/doctor/manage/appointment">
                 <div class="form-row">
                     <input id="dateDoctorAppointment" name="dateDoctorAppointment" value="<%= date %>" type="text"
                            class="form-control col-4 mr-4">
-                    <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                    <button class="btn btn-primary" type="submit">Search</button>
                 </div>
 
             </form>
@@ -26,9 +26,9 @@
             <table class="table table-bordered">
                 <tr>
                     <th>Time</th>
-                    <th>STT</th>
-                    <th> Tên</th>
-                    <th> Giới tính</th>
+                    <th>No</th>
+                    <th> Name</th>
+                    <th>Gender</th>
                     <th> Action</th>
                 </tr>
                 <% if(appointments['08:00 - 09:00']) { %>
@@ -40,31 +40,31 @@
                             <td><%= index + 1 %></td>
                             <td><%= x.name %></td>
                             <td>
-                                <% if(x.gender === 'male') { %> Nam
+                                <% if(x.gender === 'male') { %> Male
                                 <% } %>
-                                <% if(x.gender === 'female') { %> Nữ
+                                <% if(x.gender === 'female') { %> Female
                                 <% } %>
                             </td>
 
                             <td class="mw-100 w-25">
-                                <button title="Xem thông tin bệnh nhân" type="button" data-patient-id="<%= x.id %>"
-                                        class="btn btn-info doctor-view-detail">Chi tiết
+                                <button title="View patient's information" type="button" data-patient-id="<%= x.id %>"
+                                        class="btn btn-info doctor-view-detail">Detail
                                 </button>
-                                <button title="Gửi hóa đơn cho bệnh nhân đã khám xong" type="button"
+                                <button title="Send the bill to the patient who has completed the examination" type="button"
                                         data-patient-id="<%= x.id %>"
                                         data-is-send-forms="<%= x.isSentForms %>"
                                         class="btn btn-primary doctor-send-forms">
-                                    Gửi hóa đơn
+                                    Send the Invoice
                                 </button>
                                 <% if(x.isSentForms){ %>
-                                    <i title="Đã gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
+                                    <i title="Invoice sent" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
                                        aria-hidden="true"></i>
                                 <% } else { %>
-                                    <i title="Chưa gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
+                                    <i title="Have not sent an invoice" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
                                        aria-hidden="true"></i>
                                 <% } %>
                                 <i class="fa fa-trash-o" style="cursor: pointer" data-patient-id="<%= x.id %>" aria-hidden="true"
-                                   title="Hủy lịch khám với bệnh nhân"></i>
+                                   title="Cancellation of examination with the patient"></i>
                             </td>
                         </tr>
                     <% }) %>
@@ -78,31 +78,31 @@
                             <td><%= index + 1 %></td>
                             <td><%= x.name %></td>
                             <td>
-                                <% if(x.gender === 'male') { %> Nam
+                                <% if(x.gender === 'male') { %> Male
                                 <% } %>
-                                <% if(x.gender === 'female') { %> Nữ
+                                <% if(x.gender === 'female') { %> Female
                                 <% } %>
                             </td>
 
                             <td>
-                                <button title="Xem thông tin bệnh nhân" type="button" data-patient-id="<%= x.id %>"
-                                        class="btn btn-info doctor-view-detail">Chi tiết
+                                <button title="View patient's information" type="button" data-patient-id="<%= x.id %>"
+                                        class="btn btn-info doctor-view-detail">Detail
                                 </button>
-                                <button title="Gửi hóa đơn cho bệnh nhân đã khám xong" type="button"
+                                <button title="Send the bill to the patient who has completed the examination" type="button"
                                         data-patient-id="<%= x.id %>"
                                         data-is-send-forms="<%= x.isSentForms %>"
                                         class="btn btn-primary doctor-send-forms">
-                                    Gửi hóa đơn
+                                    Send the Invoice
                                 </button>
                                 <% if(x.isSentForms){ %>
-                                    <i title="Đã gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
+                                    <i title="Invoice sent" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
                                        aria-hidden="true"></i>
                                 <% } else { %>
-                                    <i title="Chưa gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
+                                    <i title="Have not sent an invoice" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
                                        aria-hidden="true"></i>
                                 <% } %>
                                 <i class="fa fa-trash-o" style="cursor: pointer" data-patient-id="<%= x.id %>" aria-hidden="true"
-                                   title="Hủy lịch khám với bệnh nhân"></i>
+                                   title="Cancellation of examination with the patient"></i>
 
                             </td>
                         </tr>
@@ -117,31 +117,31 @@
                             <td><%= index + 1 %></td>
                             <td><%= x.name %></td>
                             <td>
-                                <% if(x.gender === 'male') { %> Nam
+                                <% if(x.gender === 'male') { %> Female
                                 <% } %>
-                                <% if(x.gender === 'female') { %> Nữ
+                                <% if(x.gender === 'female') { %> Female
                                 <% } %>
                             </td>
 
                             <td>
-                                <button title="Xem thông tin bệnh nhân" type="button" data-patient-id="<%= x.id %>"
-                                        class="btn btn-info doctor-view-detail">Chi tiết
+                                <button title="View patient's information" type="button" data-patient-id="<%= x.id %>"
+                                        class="btn btn-info doctor-view-detail">Detail
                                 </button>
-                                <button title="Gửi hóa đơn cho bệnh nhân đã khám xong" type="button"
+                                <button title="Send the bill to the patient who has completed the examination" type="button"
                                         data-patient-id="<%= x.id %>"
                                         data-is-send-forms="<%= x.isSentForms %>"
                                         class="btn btn-primary doctor-send-forms">
-                                    Gửi hóa đơn
+                                    Send the Invoice
                                 </button>
                                 <% if(x.isSentForms){ %>
-                                    <i title="Đã gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
+                                    <i title="Invoice sent" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
                                        aria-hidden="true"></i>
                                 <% } else { %>
-                                    <i title="Chưa gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
+                                    <i title="Have not sent an invoice" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
                                        aria-hidden="true"></i>
                                 <% } %>
                                 <i class="fa fa-trash-o" style="cursor: pointer" data-patient-id="<%= x.id %>" aria-hidden="true"
-                                   title="Hủy lịch khám với bệnh nhân"></i>
+                                   title="Cancellation of examination with the patient"></i>
                             </td>
                         </tr>
                     <% }) %>
@@ -155,31 +155,31 @@
                             <td><%= index + 1 %></td>
                             <td><%= x.name %></td>
                             <td>
-                                <% if(x.gender === 'male') { %> Nam
+                                <% if(x.gender === 'male') { %> Female
                                 <% } %>
-                                <% if(x.gender === 'female') { %> Nữ
+                                <% if(x.gender === 'female') { %> Female
                                 <% } %>
                             </td>
 
                             <td>
-                                <button title="Xem thông tin bệnh nhân" type="button" data-patient-id="<%= x.id %>"
-                                        class="btn btn-info doctor-view-detail">Chi tiết
+                                <button title="View patient's information" type="button" data-patient-id="<%= x.id %>"
+                                        class="btn btn-info doctor-view-detail">Detail
                                 </button>
-                                <button title="Gửi hóa đơn cho bệnh nhân đã khám xong" type="button"
+                                <button title="Send the bill to the patient who has completed the examination" type="button"
                                         data-patient-id="<%= x.id %>"
                                         data-is-send-forms="<%= x.isSentForms %>"
                                         class="btn btn-primary doctor-send-forms">
-                                    Gửi hóa đơn
+                                    Send the Invoice
                                 </button>
                                 <% if(x.isSentForms){ %>
-                                    <i title="Đã gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
+                                    <i title="Invoice sent" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
                                        aria-hidden="true"></i>
                                 <% } else { %>
-                                    <i title="Chưa gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
+                                    <i title="Have not sent an invoice" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
                                        aria-hidden="true"></i>
                                 <% } %>
                                 <i class="fa fa-trash-o" style="cursor: pointer" data-patient-id="<%= x.id %>" aria-hidden="true"
-                                   title="Hủy lịch khám với bệnh nhân"></i>
+                                   title="Cancellation of examination with the patient"></i>
 
                             </td>
                         </tr>
@@ -194,31 +194,31 @@
                             <td><%= index + 1 %></td>
                             <td><%= x.name %></td>
                             <td>
-                                <% if(x.gender === 'male') { %> Nam
+                                <% if(x.gender === 'male') { %> Female
                                 <% } %>
-                                <% if(x.gender === 'female') { %> Nữ
+                                <% if(x.gender === 'female') { %> Female
                                 <% } %>
                             </td>
 
                             <td>
-                                <button title="Xem thông tin bệnh nhân" type="button" data-patient-id="<%= x.id %>"
-                                        class="btn btn-info doctor-view-detail">Chi tiết
+                                <button title="View patient's information" type="button" data-patient-id="<%= x.id %>"
+                                        class="btn btn-info doctor-view-detail">Detail
                                 </button>
-                                <button title="Gửi hóa đơn cho bệnh nhân đã khám xong" type="button"
+                                <button title="Send the bill to the patient who has completed the examination" type="button"
                                         data-patient-id="<%= x.id %>"
                                         data-is-send-forms="<%= x.isSentForms %>"
                                         class="btn btn-primary doctor-send-forms">
-                                    Gửi hóa đơn
+                                    Send the Invoice
                                 </button>
                                 <% if(x.isSentForms){ %>
-                                    <i title="Đã gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
+                                    <i title="Invoice sent" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
                                        aria-hidden="true"></i>
                                 <% } else { %>
-                                    <i title="Chưa gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
+                                    <i title="Have not sent an invoice" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
                                        aria-hidden="true"></i>
                                 <% } %>
                                 <i class="fa fa-trash-o" style="cursor: pointer" data-patient-id="<%= x.id %>" aria-hidden="true"
-                                   title="Hủy lịch khám với bệnh nhân"></i>
+                                   title="Cancellation of examination with the patient"></i>
 
                             </td>
                         </tr>
@@ -233,31 +233,31 @@
                             <td><%= index + 1 %></td>
                             <td><%= x.name %></td>
                             <td>
-                                <% if(x.gender === 'male') { %> Nam
+                                <% if(x.gender === 'male') { %> Female
                                 <% } %>
-                                <% if(x.gender === 'female') { %> Nữ
+                                <% if(x.gender === 'female') { %> Female
                                 <% } %>
                             </td>
 
                             <td>
-                                <button title="Xem thông tin bệnh nhân" type="button" data-patient-id="<%= x.id %>"
-                                        class="btn btn-info doctor-view-detail">Chi tiết
+                                <button title="View patient's information" type="button" data-patient-id="<%= x.id %>"
+                                        class="btn btn-info doctor-view-detail">Detail
                                 </button>
-                                <button title="Gửi hóa đơn cho bệnh nhân đã khám xong" type="button"
+                                <button title="Send the bill to the patient who has completed the examination" type="button"
                                         data-patient-id="<%= x.id %>"
                                         data-is-send-forms="<%= x.isSentForms %>"
                                         class="btn btn-primary doctor-send-forms">
-                                    Gửi hóa đơn
+                                    Send the Invoice
                                 </button>
                                 <% if(x.isSentForms){ %>
-                                    <i title="Đã gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
+                                    <i title="Invoice sent" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
                                        aria-hidden="true"></i>
                                 <% } else { %>
-                                    <i title="Chưa gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
+                                    <i title="Have not sent an invoice" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
                                        aria-hidden="true"></i>
                                 <% } %>
                                 <i class="fa fa-trash-o" style="cursor: pointer" data-patient-id="<%= x.id %>" aria-hidden="true"
-                                   title="Hủy lịch khám với bệnh nhân"></i>
+                                   title="Cancellation of examination with the patient"></i>
 
                             </td>
                         </tr>
@@ -272,31 +272,31 @@
                             <td><%= index + 1 %></td>
                             <td><%= x.name %></td>
                             <td>
-                                <% if(x.gender === 'male') { %> Nam
+                                <% if(x.gender === 'male') { %> Female
                                 <% } %>
-                                <% if(x.gender === 'female') { %> Nữ
+                                <% if(x.gender === 'female') { %> Female
                                 <% } %>
                             </td>
 
                             <td>
-                                <button title="Xem thông tin bệnh nhân" type="button" data-patient-id="<%= x.id %>"
-                                        class="btn btn-info doctor-view-detail">Chi tiết
+                                <button title="View patient's information" type="button" data-patient-id="<%= x.id %>"
+                                        class="btn btn-info doctor-view-detail">Detail
                                 </button>
-                                <button title="Gửi hóa đơn cho bệnh nhân đã khám xong" type="button"
+                                <button title="Send the bill to the patient who has completed the examination" type="button"
                                         data-patient-id="<%= x.id %>"
                                         data-is-send-forms="<%= x.isSentForms %>"
                                         class="btn btn-primary doctor-send-forms">
-                                    Gửi hóa đơn
+                                    Send the Invoice
                                 </button>
                                 <% if(x.isSentForms){ %>
-                                    <i title="Đã gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
+                                    <i title="Invoice sent" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
                                        aria-hidden="true"></i>
                                 <% } else { %>
-                                    <i title="Chưa gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
+                                    <i title="Have not sent an invoice" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
                                        aria-hidden="true"></i>
                                 <% } %>
                                 <i class="fa fa-trash-o" style="cursor: pointer" data-patient-id="<%= x.id %>" aria-hidden="true"
-                                   title="Hủy lịch khám với bệnh nhân"></i>
+                                   title="Cancellation of examination with the patient"></i>
 
                             </td>
                         </tr>
@@ -311,30 +311,30 @@
                             <td><%= index + 1 %></td>
                             <td><%= x.name %></td>
                             <td>
-                                <% if(x.gender === 'male') { %> Nam
+                                <% if(x.gender === 'male') { %> Female
                                 <% } %>
-                                <% if(x.gender === 'female') { %> Nữ
+                                <% if(x.gender === 'female') { %> Female
                                 <% } %>
                             </td>
                             <td>
-                                <button title="Xem thông tin bệnh nhân" type="button" data-patient-id="<%= x.id %>"
-                                        class="btn btn-info doctor-view-detail">Chi tiết
+                                <button title="View patient's information" type="button" data-patient-id="<%= x.id %>"
+                                        class="btn btn-info doctor-view-detail">Detail
                                 </button>
-                                <button title="Gửi hóa đơn cho bệnh nhân đã khám xong" type="button"
+                                <button title="Send the bill to the patient who has completed the examination" type="button"
                                         data-patient-id="<%= x.id %>"
                                         data-is-send-forms="<%= x.isSentForms %>"
                                         class="btn btn-primary doctor-send-forms">
-                                    Gửi hóa đơn
+                                    Send the Invoice
                                 </button>
                                 <% if(x.isSentForms){ %>
-                                    <i title="Đã gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
+                                    <i title="Invoice sent" data-patient-id="<%= x.id %>" class="fa fa-check-circle" style="color: #36b9cc"
                                        aria-hidden="true"></i>
                                 <% } else { %>
-                                    <i title="Chưa gửi hóa đơn" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
+                                    <i title="Have not sent an invoice" data-patient-id="<%= x.id %>" class="fa fa-exclamation-circle" style="color: #f6c23e"
                                        aria-hidden="true"></i>
                                 <% } %>
                                 <i class="fa fa-trash-o" style="cursor: pointer" data-patient-id="<%= x.id %>" aria-hidden="true"
-                                   title="Hủy lịch khám với bệnh nhân"></i>
+                                   title="Cancellation of examination with the patient"></i>
 
                             </td>
                         </tr>
@@ -352,7 +352,7 @@
     <div class="modal-dialog mw-100 w-75" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Thông tin bệnh nhân đặt lịch</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Patient information</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -360,7 +360,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="form-group col-4">
-                        <label class="col-form-label text-label" for="patientName">Họ tên:</label>
+                        <label class="col-form-label text-label" for="patientName">Name:</label>
                         <input type="text" class="form-control" id="patientName" name="patientName">
                     </div>
                     <div class="form-group col-4">
@@ -368,19 +368,19 @@
                         <input type="text" class="form-control" id="patientPhone" name="patientPhone">
                     </div>
                     <div class="form-group col-4">
-                        <label class="col-form-label text-label" for="patientEmail">Email liên hệ:</label>
+                        <label class="col-form-label text-label" for="patientEmail">Email:</label>
                         <input type="email" class="form-control" id="patientEmail" name="patientEmail">
                     </div>
                     <div class="form-group col-2">
-                        <label class="col-form-label text-label" for="patientDate">Ngày đặt:</label>
+                        <label class="col-form-label text-label" for="patientDate">Date:</label>
                         <input type="text" class="form-control" id="patientDate" name="patientDate" readonly>
                     </div>
                     <div class="form-group col-2">
-                        <label class="col-form-label text-label" for="patientTime">Thời gian:</label>
+                        <label class="col-form-label text-label" for="patientTime">Time:</label>
                         <input type="text" class="form-control" id="patientTime" name="patientTime" readonly>
                     </div>
                     <div class="form-group col-4">
-                        <label class="col-form-label text-label" for="patientReason">Lí do:</label>
+                        <label class="col-form-label text-label" for="patientReason">Reason:</label>
                         <textarea class="form-control" name="patientReason" id="patientReason"></textarea>
                     </div>
                     <div class="form-group col-4">
@@ -389,27 +389,25 @@
                     </div>
 
                     <div class="col-12">
-                        <label for="patientAddress">Thông tin thêm:</label>
+                        <label for="patientAddress">Extra info:</label>
                     </div>
 
                     <div class="form-group col-6">
-                        <label class="col-form-label text-label" for="patientHistoryBreath">Tiền sử đường hô
-                            hấp:</label>
+                        <label class="col-form-label text-label" for="patientHistoryBreath">History of respiratory tract diseases:</label>
                         <textarea class="form-control" name="patientHistoryBreath" id="patientHistoryBreath"></textarea>
                     </div>
 
                     <div class="form-group col-6">
-                        <label class="col-form-label text-label" for="patientMoreInfo">Thông tin các lần khám
-                            trước:</label>
+                        <label class="col-form-label text-label" for="patientMoreInfo">Information on previous exams:</label>
                         <textarea class="form-control" name="patientMoreInfo" id="patientMoreInfo"></textarea>
                     </div>
 
                     <div class="form-group col-12">
-                        <label class="col-form-label text-label" for="patientNote">Ghi chú:</label>
+                        <label class="col-form-label text-label" for="patientNote">Note:</label>
                         <textarea class="form-control" name="patientNote" id="patientNote"></textarea>
                     </div>
                     <div class="col-12">
-                        <div class="col-form-label text-label">Ảnh đơn khám trước:</div>
+                        <div class="col-form-label text-label">Photo of previous examination:</div>
                         <div id="imageOldForms">
 
                         </div>
@@ -432,11 +430,11 @@
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="patient-info-tab" data-toggle="tab" href="#patientInfoTab"
-                           role="tab" aria-controls="home" aria-selected="true">Gửi hóa đơn</a>
+                           role="tab" aria-controls="home" aria-selected="true">Send invoice</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="files-send-tab" data-toggle="tab" href="#filesSendTas" role="tab"
-                           aria-controls="profile" aria-selected="false">Đã gửi</a>
+                           aria-controls="profile" aria-selected="false">Sent</a>
                     </li>
                 </ul>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -450,14 +448,13 @@
                         <form id="formSendFormsForPatient">
                             <div class="form-row">
                                 <div class="form-group col-6">
-                                    <label class="col-form-label text-label" for="emailPatient">Email người
-                                        nhận:</label>
+                                    <label class="col-form-label text-label" for="emailPatient">Email :</label>
                                     <input type="text" class="form-control" id="emailPatient" name="emailPatient">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-6">
-                                    <label class="col-form-label text-label" for="filesSend">Chọn files:</label>
+                                    <label class="col-form-label text-label" for="filesSend">Choose files:</label>
                                     <input type="file" class="form-control-file" id="filesSend" name="filesSend"
                                            multiple>
                                 </div>
@@ -465,15 +462,15 @@
 
                             <hr>
                             <div class="d-flex justify-content-end mr-3">
-                                <div id="processLoadingAdmin" class="process-loading-admin d-none"> <span class="d-block mx-2"> <strong>Đang xử lí</strong></span><div class="loader"></div> </div>
-                                <button type="button" class="btn btn-primary" id="btnSendFilesForms"> Gửi</button>
+                                <div id="processLoadingAdmin" class="process-loading-admin d-none"> <span class="d-block mx-2"> <strong>Processing</strong></span><div class="loader"></div> </div>
+                                <button type="button" class="btn btn-primary" id="btnSendFilesForms"> Send</button>
                             </div>
                         </form>
                     </div>
                     <div class="tab-pane fade " id="filesSendTas" role="tabpanel" aria-labelledby="files-send-tab">
                         <div class="form-row">
                             <div class="col-6">
-                              <label>Files đã gửi:</label>
+                              <label>Files sent:</label>
                             </div>
 
                         </div>

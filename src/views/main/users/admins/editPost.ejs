@@ -1,7 +1,7 @@
 <% extend("master.ejs") %>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Cập nhật thông tin bài đăng</h1>
+    <h1 class="h3 mb-0 text-gray-800">Update thông tin bài đăng</h1>
 </div>
 <!-- Content Row -->
 <div class="row">
@@ -63,7 +63,7 @@
                 <label for="contentMarkdown">Description</label>
                 <textarea id="contentMarkdown" class="form-control"><%= post.contentMarkdown%></textarea>
             </div>
-            <button type="button" class="btn btn-primary" id="btnUpdatePost" data-post-id="<%= post.id %>">Cập nhật</button>
+            <button type="button" class="btn btn-primary" id="btnUpdatePost" data-post-id="<%= post.id %>">Update</button>
         </form>
     </div>
 </div>

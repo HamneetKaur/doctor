@@ -1,15 +1,15 @@
 <% extend("master.ejs") %>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Quản lý bài đăng</h1>
+    <h1 class="h3 mb-0 text-gray-800">Manage Posts</h1>
     <a href="/supporter/manage/post/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-plus-circle fa-sm text-white-50"></i> Thêm mới</a>
+                class="fas fa-plus-circle fa-sm text-white-50"></i> Add new</a>
 </div>
 
 <!-- Content Row -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh sách bài đăng mới</h6>
+        <h6 class="m-0 font-weight-bold text-primary">List of new posts</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -17,9 +17,9 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Tên bài đăng</th>
-                    <th>Người viết</th>
-                    <th>Ngày tạo</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Date</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -31,8 +31,8 @@
                         <td><%= post.getDataValue('writerName') %></td>
                         <td><%= post.getDataValue('dateClient') %></td>
                         <td class="">
-                            <a class="" href="/supporter/post/edit/<%= post.id %>" title="Sửa thông tin"><i class="fas fa-pen-square mx-3"></i></a>
-                            <a class="delete-post" href="#" data-post-id="<%= post.id%>" title="Xóa"><i class="fas fa-trash"></i></a>
+                            <a class="" href="/supporter/post/edit/<%= post.id %>" title="Edit"><i class="fas fa-pen-square mx-3"></i></a>
+                            <a class="delete-post" href="#" data-post-id="<%= post.id%>" title="Delete"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 <% }) %>
@@ -43,13 +43,13 @@
                 <ul class="pagination">
                     <li class="page-item disabled li-pre">
                         <a class="page-link page-post-pre" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo; Trước</span>
+                            <span aria-hidden="true">&laquo; Prev</span>
                         </a>
                     </li>
 
                     <li class="page-item ml-3 li-next">
                         <a class="page-link page-post-next" href="#" aria-label="Next">
-                            <span aria-hidden="true">Tiếp &raquo; </span>
+                            <span aria-hidden="true">Next &raquo; </span>
                         </a>
                     </li>
                 </ul>

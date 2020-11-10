@@ -1,14 +1,14 @@
 <% extend("master.ejs") %>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Quản lý nhân viên hỗ trợ</h1>
+    <h1 class="h3 mb-0 text-gray-800">Manage counselor</h1>
     <a href="/users/manage/supporter/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-plus-circle fa-sm text-white-50"></i> Thêm mới</a>
+                class="fas fa-plus-circle fa-sm text-white-50"></i> Add new</a>
 </div>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh sách nhân viên hỗ trợ</h6>
+        <h6 class="m-0 font-weight-bold text-primary">List of counselor</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -16,8 +16,8 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Họ tên</th>
-                    <th>Trạng thái</th>
+                    <th>Name</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -27,17 +27,17 @@
                         <td><%= supporter.id %></td>
                         <td><%= supporter.name %></td>
                         <td>
-                            <% if(supporter.isActive) { %> Hoạt động
-                            <% } else { %> Tạm khóa
+                            <% if(supporter.isActive) { %> Active
+                            <% } else { %> Inactive
                             <% } %>
                         </td>
                         <td class="">
                             <a class="show-supporter-info" data-supporter-id="<%= supporter.id %>" href="#"
-                               title="Thông tin"><i class="fas fa-info-circle"></i></a>
+                               title="View info"><i class="fas fa-info-circle"></i></a>
                             <a class="edit-supporter-info" href="/users/supporter/edit/<%= supporter.id %>"
-                               title="Sửa thông tin"><i class="fas fa-pen-square mx-3"></i></a>
+                               title="Edit"><i class="fas fa-pen-square mx-3"></i></a>
                             <a class="delete-supporter-info" data-supporter-id="<%= supporter.id %>" href="#"
-                               title="Xóa"><i class="fas fa-trash"></i></a>
+                               title="Delete"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 <% }) %>
@@ -52,7 +52,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Thông tin bác sĩ</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Doctor information</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -62,7 +62,7 @@
                     <div class="col-12">
                         <div class="form-row">
                             <div class="form-group col-7">
-                                <label for="nameDoctor" class="col-form-label text-label">Tên bác sĩ</label>
+                                <label for="nameDoctor" class="col-form-label text-label">Name</label>
                                 <input type="text" class="form-control" id="nameDoctor" disabled>
                             </div>
                             <div class="form-group col-5">
@@ -72,11 +72,11 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-6">
-                                <label for="clinicDoctor" class="col-form-label text-label">Phòng khám</label>
+                                <label for="clinicDoctor" class="col-form-label text-label">Clinic</label>
                                 <input type="text" class="form-control" id="clinicDoctor" disabled>
                             </div>
                             <div class="form-group col-6">
-                                <label for="specializationDoctor" class="col-form-label text-label">Chuyên khoa</label>
+                                <label for="specializationDoctor" class="col-form-label text-label">Specialist</label>
                                 <input type="text" class="form-control" id="specializationDoctor" disabled>
                             </div>
                         </div>

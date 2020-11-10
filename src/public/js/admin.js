@@ -59,7 +59,7 @@ function deleteClinicById() {
             data: { id: id },
             success: function(data) {
                 node.closest("tr").remove();
-                alertify.success('Xóa phòng khám thành công');
+                alertify.success('Delete phòng khám thành công');
             },
             error: function(err) {
                 alertify.error('Có lỗi xảy ra, vui lòng thử lại sau');
@@ -168,7 +168,7 @@ function handleUpdateClinicNormal(formData) {
         contentType: false,
         processData: false,
         success: function(data) {
-            alert('Cập nhật thông tin phòng khám thành công');
+            alert('Update thông tin phòng khám thành công');
             window.location.href = `${window.location.origin}/users/manage/clinic`;
         },
         error: function(error) {
@@ -184,7 +184,7 @@ function handleUpdateClinicWithoutFile(data) {
         url: `${window.location.origin}/admin/clinic/update-without-file`,
         data: data,
         success: function(data) {
-            alert('Cập nhật thông tin phòng khám thành công');
+            alert('Update thông tin phòng khám thành công');
             window.location.href = `${window.location.origin}/users/manage/clinic`;
         },
         error: function(error) {
@@ -209,18 +209,18 @@ function showModalInfoClinic() {
                 if (data.clinic.phone) {
                     $('#phone').val(data.clinic.phone);
                 } else {
-                    $('#phone').val('Chưa cập nhật');
+                    $('#phone').val('Chưa Update');
                 }
                 if (data.clinic.address) {
                     $('#address').val(data.clinic.address);
                 } else {
-                    $('#address').val('Chưa cập nhật');
+                    $('#address').val('Chưa Update');
                 }
 
                 if (data.clinic.image) {
                     $('#imageClinic').prepend(`<img class="img-info-clinic" src="/images/clinics/${data.clinic.image}" />`)
                 } else {
-                    $('#imageClinic').text('Chưa cập nhật')
+                    $('#imageClinic').text('Chưa Update')
                 }
 
                 $('#modalInfoClinic').modal('show');
@@ -279,7 +279,7 @@ function deleteDoctorById() {
             data: { id: id },
             success: function(data) {
                 node.closest("tr").remove();
-                alertify.success('Xóa bác sĩ  thành công');
+                alertify.success('Delete bác sĩ  thành công');
             },
             error: function(err) {
                 alertify.error('Có lỗi xảy ra, vui lòng thử lại sau');
@@ -305,19 +305,19 @@ function showModalInfoDoctor() {
                 if (data.doctor.phone) {
                     $('#phoneDoctor').val(data.doctor.phone);
                 } else {
-                    $('#phoneDoctor').val('Chưa cập nhật');
+                    $('#phoneDoctor').val('Chưa Update');
                 }
                 if (data.doctor.address) {
                     $('#addressDoctor').val(data.doctor.address);
                 } else {
-                    $('#addressDoctor').val('Chưa cập nhật');
+                    $('#addressDoctor').val('Chưa Update');
                 }
                 $('#specializationDoctor').val(data.doctor.specializationName);
                 $('#clinicDoctor').val(data.doctor.clinicName);
                 if (data.doctor.avatar) {
                     $('#imageDoctor').prepend(`<img class="img-info-clinic" src="/images/users/${data.doctor.avatar}" />`)
                 } else {
-                    $('#imageDoctor').text('Chưa cập nhật')
+                    $('#imageDoctor').text('Chưa Update')
                 }
 
                 $('#modalInfoDoctor').modal('show');
@@ -363,7 +363,7 @@ function handleUpdateDoctorNormal(formData) {
         contentType: false,
         processData: false,
         success: function(data) {
-            alert('Cập nhật thông tin bác sĩ thành công');
+            alert('Update thông tin bác sĩ thành công');
             window.location.href = `${window.location.origin}/users/manage/doctor`;
         },
         error: function(error) {
@@ -379,7 +379,7 @@ function handleUpdateDoctorWithoutFile(data) {
         url: `${window.location.origin}/admin/doctor/update-without-file`,
         data: data,
         success: function(data) {
-            alert('Cập nhật thông tin bác sĩ thành công');
+            alert('Update thông tin bác sĩ thành công');
             window.location.href = `${window.location.origin}/users/manage/doctor`;
         },
         error: function(error) {
@@ -402,7 +402,7 @@ function deleteSpecializationById() {
             data: { id: id },
             success: function(data) {
                 node.closest("tr").remove();
-                alertify.success('Xóa chuyên khoa thành công');
+                alertify.success('Delete chuyên khoa thành công');
             },
             error: function(err) {
                 alertify.error('Có lỗi xảy ra, vui lòng thử lại sau');
@@ -457,8 +457,8 @@ function generateTablePostPagination(page) {
                         <td>${post.writerName}</td>
                         <td>${post.dateClient}</td>
                         <td class="">
-                            <a class=" " href="/supporter/post/edit/${post.id}" title="Sửa thông tin"><i class="fas fa-pen-square mx-3"></i></a>
-                            <a class="delete-post" href="#" data-post-id="${post.id}" title="Xóa"><i class="fas fa-trash"></i></a>
+                            <a class=" " href="/supporter/post/edit/${post.id}" title="Edit thông tin"><i class="fas fa-pen-square mx-3"></i></a>
+                            <a class="delete-post" href="#" data-post-id="${post.id}" title="Delete"><i class="fas fa-trash"></i></a>
                         </td>
                    </tr>
                 `;
@@ -485,7 +485,7 @@ function deletePostById() {
             data: { id: id },
             success: function(data) {
                 node.closest("tr").remove();
-                alertify.success('Xóa bài đăng thành công');
+                alertify.success('Delete bài đăng thành công');
             },
             error: function(err) {
                 alertify.error('Có lỗi xảy ra, vui lòng thử lại sau');
@@ -516,7 +516,7 @@ function updatePost(markdown, converter) {
             url: `${window.location.origin}/supporter/post/update`,
             data: data,
             success: function(data) {
-                alert('Cập nhật bài đăng thành công');
+                alert('Update bài đăng thành công');
                 window.location.href = `${window.location.origin}/supporter/manage/posts`;
             },
             error: function(error) {
