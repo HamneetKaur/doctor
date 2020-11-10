@@ -30,7 +30,7 @@
                 <div class="col-12 mt-3">
                     <a class="text-decoration-none" href="/">Homepage </a><span aria-hidden="true">&raquo;</span>
                     <span style="text-transform: uppercase">
-                    Gửi ý kiến phản hồi
+                  Send feedback
                     </span>
                 </div>
             </div>
@@ -42,34 +42,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-8 mx-auto">
-                    <h2>Gửi ý kiến phản hồi sau khi đi khám bệnh</h2>
+                    <h2>Send feedback after going to the doctor</h2>
                     <hr>
                     <div>
-                        Phản hồi của bạn sẽ giúp những người khác dễ dàng hơn trong việc lựa chọn bác sĩ phù hợp.
-                    </div>
+                        Your feedback will make it easier for others to choose the right doctor.                    </div>
                     <div class="mt-2">
-                        Bạn vui lòng cho ý kiến sau khi đi khám với Bác sĩ <%= doctor.name %>
+                        Please consult your doctor after consulting your doctor: <%= doctor.name %>
                     </div>
                     <form id="formFeedBack">
                         <div class="form-row mt-4">
                             <div class="col">
-                                <label for="feedbackName">Họ và tên </label>
+                                <label for="feedbackName">Full </label>
                                 <input class="form-control" name="feedbackName" id="feedbackName" type="text"
-                                       placeholder="Họ và tên (bắt buộc)">
+                                       placeholder="Full name (required)">
                             </div>
                             <div class="col">
-                                <label for="feedbackPhone">Số điện thoại</label>
+                                <label for="feedbackPhone">Phone number</label>
                                 <input class="form-control" name="feedbackPhone" id="feedbackPhone" type="text"
-                                       placeholder="Số điện thoại (bắt buộc)">
+                                       placeholder="Phone number (required)">
                             </div>
                         </div>
                         <div class="form-group mt-2">
-                            <label for="feedbackContent">Nội dung phản hồi</label>
+                            <label for="feedbackContent">Content</label>
                             <textarea class="form-control" name="feedbackContent" id="feedbackContent"
                                       type="text"></textarea>
                         </div>
                         <div class="mb-4">
-                            <button type="button" class="btn btn-primary" data-doctor-id="<%= doctor.id %>" id="sendFeedback">Xác nhận</button>
+                            <button type="button" class="btn btn-primary" data-doctor-id="<%= doctor.id %>" id="sendFeedback">Submit</button>
                         </div>
                     </form>
                 </div>

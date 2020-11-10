@@ -37,24 +37,24 @@
     <div class="row">
         <div class="col-12">
             <div class="text-center mt-3">
-                <span class="title">Thông tin đặt lịch khám bệnh</span>
+                <span class="title">Information to schedule medical examination</span>
             </div>
             <input type="text" id="psid" hidden>
             <div class="form-group">
-                <label for="customerName">Họ và tên:</label>
-                <input type="text" id="customerName" class="form-control" placeholder="Họ và tên...">
+                <label for="customerName">Full name:</label>
+                <input type="text" id="customerName" class="form-control" placeholder="Full name...">
             </div>
             <div class="form-group">
-                <label for="phone">Số điện thoại (<span style="color: red">*</span>):</label>
-                <input type="text" id="phone" class="form-control" placeholder="Số điện thoại...">
-                <div class="invalid-feedback">Vui lòng nhập vào số điện thoại hợp lệ .</div>
+                <label for="phone">Phone number (<span style="color: red">*</span>):</label>
+                <input type="text" id="phone" class="form-control" placeholder="Phone number...">
+                <div class="invalid-feedback">Please enter a valid phone number .</div>
             </div>
             <div class="form-group">
-                <label for="reason">Lí do khám (<span style="color: red">*</span>):</label>
-                <textarea rows="3" id="reason" class="form-control" placeholder="Tóm tắt lý do khám bệnh"></textarea>
-                <div class="invalid-feedback">Vui lòng điền lý do khám bệnh.</div>
+                <label for="reason">Reasons for examination(<span style="color: red">*</span>):</label>
+                <textarea rows="3" id="reason" class="form-control" placeholder="Summary of reasons for examination"></textarea>
+                <div class="invalid-feedback">Please enter the reason for the examination.</div>
             </div>
-            <button class="btn btn-primary" id="btnBooking">ĐẶT LỊCH</button>
+            <button class="btn btn-primary" id="btnBooking">Submit</button>
         </div>
 
     </div>
@@ -62,8 +62,10 @@
 </div>
 <footer>
     <div class="text-center">
-        <div>
-            <span>Copyright &copy; HUST - DOCTOR CARE -  2020</span>
+        <div class="text-center">
+        <span>Copyright &copy; <a title="More info"
+                                  href="https://www.youtube.com/channel/UCHqJxLo7mKam9GKqqwr2wfA?sub_confirmation=1"
+                                  target="_blank">HaryPhamDev - Doctors Care -  2020</a></span>
         </div>
     </div>
 </footer>

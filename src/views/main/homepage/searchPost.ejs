@@ -30,9 +30,9 @@
                 <div class="col-12 mt-3">
                     <a class="text-decoration-none" href="/">Homepage </a><span aria-hidden="true">&raquo;</span>
                     <span style="text-transform: uppercase">
-                    <a href="/all-posts" class="text-decoration-none">Danh sách bài đăng</a> <span aria-hidden="true">&raquo;</span>
+                    <a href="/all-posts" class="text-decoration-none">List of posts</a> <span aria-hidden="true">&raquo;</span>
                     </span>
-                    <span style="text-transform: uppercase">Tìm kiếm</span>
+                    <span style="text-transform: uppercase">Search</span>
                 </div>
             </div>
         </div>
@@ -46,9 +46,9 @@
                     <h2></h2>
                     <hr>
                     <div id="list-posts-client-search-page">
-                        <span class="d-block m-3">Kết quả tìm kiếm từ khóa <b>"<%= search %>" :</b> </span>
+                        <span class="d-block m-3">Showing results for <b>"<%= search %>" :</b> </span>
                         <% if(posts.length === 0){%>
-                            <div class="m-3" style="font-weight: 600">Không tìm thấy kết quả</div>
+                            <div class="m-3" style="font-weight: 600">No results were found</div>
                         <%}%>
                         <% posts.forEach(function(post) { %>
                             <a class="text-decoration-none" href="/detail/post/<%= post._source.postId %>">
@@ -70,7 +70,7 @@
                 </div>
                 <div class="col-4 mt-3">
                     <input type="text" class="form-control" id="searchPostInSearchPageClient"
-                           placeholder="Tìm kiếm bài đăng...">
+                           placeholder="Search for posts...">
                 </div>
             </div>
         </div>
