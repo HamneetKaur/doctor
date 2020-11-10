@@ -53,7 +53,7 @@ function getScheduleDoctorByDate() {
                                         <span class="d-block pb-1"
                                               style="border-bottom: 1px solid #ccc">${data.doctor.address}</span>
                                     </div>
-                                    <span class="d-block pt-2">Giá khám: 500.000 đ</span>
+                                    <span class="d-block pt-2">Price: 500.000 đ</span>
                                 </div>
                         
                         `;
@@ -128,7 +128,7 @@ function specializationGetScheduleDoctorByDate() {
                                                 <span class="d-block pt-3 pb-1" style="text-transform: uppercase">Địa chỉ khám:</span>
                                                 <span class="d-block pb-1" style="border-bottom: 1px solid #ccc">${data.doctor.address}</span>
                                             </div>
-                                            <span class="d-block pt-2">Giá khám: 500.000 đ</span>
+                                            <span class="d-block pt-2">Price: 500.000 đ</span>
                          </div>
                     `;
                 } else {
