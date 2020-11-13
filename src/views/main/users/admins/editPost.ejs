@@ -1,18 +1,18 @@
 <% extend("master.ejs") %>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Update thông tin bài đăng</h1>
+    <h1 class="h3 mb-0 text-gray-800">Update a post's information</h1>
 </div>
 <!-- Content Row -->
 <div class="row">
     <div class="col-10 mx-auto">
         <form id="formUpdatePost">
             <div class="form-group">
-                <label for="titlePost">Tiêu đề</label>
-                <input type="text" class="form-control" id="titlePost" name="titlePost" placeholder="Tiêu đề bài đăng" value="<%= post.title%>">
+                <label for="titlePost">Title</label>
+                <input type="text" class="form-control" id="titlePost" name="titlePost" placeholder="Post's title" value="<%= post.title%>">
             </div>
             <div class="form-group">
-                <label for="address">Bài đăng phục vụ cho:</label>
+                <label for="address">The post serves:</label>
                 <div class="form-row">
                     <div class="form-group col-4">
                         <select id="forDoctorId" class="form-control" name="forDoctorId">
@@ -21,7 +21,7 @@
                                     <option value="<%= x.id %>" <% if(x.id === post.forDoctorId){%> selected <%}%>  > <%= x.name %> </option>
                                 <% }) %>
                             <% } else { %>
-                                <option value="-1" selected>Không chọn bác sĩ</option>
+                                <option value="-1" selected>No doctors are chosen</option>
                                 <% doctors.forEach(function(x) { %>
                                     <option value="<%= x.id %>"> <%= x.name %> </option>
                                 <% }) %>
@@ -35,7 +35,7 @@
                                     <option value="<%= x.id %>" <% if(x.id === post.forClinicId){%> selected <%}%>> <%= x.name %> </option>
                                 <% }) %>
                             <% } else { %>
-                                <option value="-1" selected>Không chọn phòng khám</option>
+                                <option value="-1" selected>No clinics are chosen</option>
                                 <% clinics.forEach(function(x) { %>
                                     <option value="<%= x.id %>"> <%= x.name %> </option>
                                 <% }) %>
@@ -49,7 +49,7 @@
                                     <option value="<%= x.id %>" <% if(x.id === post.forSpecializationId){%> selected <%}%>> <%= x.name %> </option>
                                 <% }) %>
                             <% } else { %>
-                                <option value="-1" selected>Không chọn chuyên khoa</option>
+                                <option value="-1" selected>No specialist are chosen</option>
                                 <% specializations.forEach(function(x) { %>
                                     <option value="<%= x.id %>"> <%= x.name %> </option>
                                 <% }) %>

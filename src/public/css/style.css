@@ -304,7 +304,7 @@ footer {
   padding: 5px;
   margin: 20px 20px 10px 0;
   height: 32px;
-  width: 120px;
+  width: 122px;
   cursor: pointer;
   text-align: center; }
   .doctor-schedule .doctor-time:hover {
@@ -394,7 +394,7 @@ select#day-book {
     padding: 9px;
     margin: 20px 8px 10px 0;
     height: 40px;
-    width: 120px;
+    width: 122px;
     cursor: pointer;
     text-align: center; }
     .content-specialization .each-doctor-spe .right-content .doctor-time:hover {
