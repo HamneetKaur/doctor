@@ -4,7 +4,7 @@ module.exports = {
     up: (queryInterface, Sequelize) => {
         return queryInterface.bulkInsert('Users', [
             {
-                name: 'admin',
+                name: 'admin - HaryPhamDev',
                 email: 'admin@gmail.com',
                 password: '$2a$07$Bq0hCq3kVrvKUHfMT0NJROmQkx09aEQkGlwBGEdw799YJvWqH1kuy', //123456
                 address: 'New York',
@@ -15,45 +15,67 @@ module.exports = {
                 updatedAt: new Date()
             },
             {
+                name: 'Doctor - Evan',
+                email: 'doctor4@gmail.com',
+                password: '$2a$07$Bq0hCq3kVrvKUHfMT0NJROmQkx09aEQkGlwBGEdw799YJvWqH1kuy', //123456
+                address: 'LA',
+                phone: '088456735',
+                avatar: 'doctor3.jpg',
+                roleId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                name: 'Doctor - Ben',
+                email: 'doctor5@gmail.com',
+                password: '$2a$07$Bq0hCq3kVrvKUHfMT0NJROmQkx09aEQkGlwBGEdw799YJvWqH1kuy', //123456
+                address: 'LA',
+                phone: '088456735',
+                avatar: 'doctor4.jpg',
+                roleId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
                 name: 'Doctor - Hary Pham',
                 email: 'doctor@gmail.com',
                 password: '$2a$07$Bq0hCq3kVrvKUHfMT0NJROmQkx09aEQkGlwBGEdw799YJvWqH1kuy', //123456
                 address: 'LA',
                 phone: '088456735',
-                avatar: 'doctor.jpg',
+                avatar: 'doctor1.jpg',
                 roleId: 2,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
-                name: 'Doctor - Hary Pham 1',
+                name: 'Doctor - Clever',
                 email: 'doctor1@gmail.com',
                 password: '$2a$07$Bq0hCq3kVrvKUHfMT0NJROmQkx09aEQkGlwBGEdw799YJvWqH1kuy', //123456
                 address: 'LA',
                 phone: '088456735',
-                avatar: 'doctor.jpg',
+                avatar: 'doctor2.jpg',
                 roleId: 2,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
-                name: 'Doctor - Hary Pham 2',
+                name: 'Doctor - Sam',
                 email: 'doctor2@gmail.com',
                 password: '$2a$07$Bq0hCq3kVrvKUHfMT0NJROmQkx09aEQkGlwBGEdw799YJvWqH1kuy', //123456
                 address: 'LA',
                 phone: '088456735',
-                avatar: 'doctor.jpg',
+                avatar: 'doctor3.jpg',
                 roleId: 2,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
-                name: 'Doctor - Hary Pham 3',
+                name: 'Doctor - Eric Pham',
                 email: 'doctor3@gmail.com',
                 password: '$2a$07$Bq0hCq3kVrvKUHfMT0NJROmQkx09aEQkGlwBGEdw799YJvWqH1kuy', //123456
                 address: 'LA',
                 phone: '088456735',
-                avatar: 'doctor.jpg',
+                avatar: 'doctor4.jpg',
                 roleId: 2,
                 createdAt: new Date(),
                 updatedAt: new Date()

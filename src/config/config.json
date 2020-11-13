@@ -1,9 +1,9 @@
 {
     "development": {
         "username": "root",
-        "password": "antoan081066",
-        "database": "doctorcare",
-        "host": "graduation.cljwjy6uy3za.ap-southeast-1.rds.amazonaws.com",
+        "password": null,
+        "database": "aaa",
+        "host": "localhost",
         "dialect": "mysql",
         "operatorsAliases": false,
         "dialectOptions": {

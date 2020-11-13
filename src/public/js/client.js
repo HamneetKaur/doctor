@@ -35,7 +35,7 @@ function getScheduleDoctorByDate() {
 
                         if (index === data.message.length - 1 && schedule.isDisable === true) {
                             html += `<div>
-                            Không có lịch khám trong khoảng thời gian hiện tại. Vui lòng chọn các lịch khám tiếp theo
+                                  There are no scheduled visits in the current timeframe. Please select the next scheduled exams.
                             </div>`
                         }
 
@@ -43,13 +43,12 @@ function getScheduleDoctorByDate() {
                         moreInfo = `
                          <div class="d-flex flex-column">
                                     <div>
-                                                <span class="d-block mt-2"> Chọn <i class="fa fa-hand-o-up"
-                                                                                    aria-hidden="true"></i> và đặt miễn phí</span>
+                                                <span class="d-block mt-2">Choose <i class="fa fa-hand-o-up" aria-hidden="true"></i>  and book a free consultation</span>
                                     </div>
                                     <div style="border-top: 1px solid #ccc"
                                          class="d-flex flex-column">
                                                             <span class="d-block pt-3 pb-1"
-                                                                  style="text-transform: uppercase">Address khám:</span>
+                                                                  style="text-transform: uppercase">Address:</span>
                                         <span class="d-block pb-1"
                                               style="border-bottom: 1px solid #ccc">${data.doctor.address}</span>
                                     </div>
@@ -61,8 +60,7 @@ function getScheduleDoctorByDate() {
                 } else {
                     html = `
                             <div>
-                                Bác sĩ "${data.doctor.name}" không có lịch khám trong ngày <b>${value}</b>. Xin lựa chọn
-                                những lịch khám tiếp theo.
+                                 Doctor "${data.doctor.name}" does not have an appointment on <b>${value}</b>. Please select the next examination schedule.
                             </div>
                     `;
                     moreInfo = '';
@@ -113,7 +111,7 @@ function specializationGetScheduleDoctorByDate() {
 
                         if (index === data.message.length - 1 && schedule.isDisable === true) {
                             html += `<div>
-                            Không có lịch khám trong khoảng thời gian hiện tại. Vui lòng chọn các lịch khám tiếp theo
+                                   There are no scheduled visits in the current timeframe. Please select the next scheduled exams.
                             </div>`
                         }
 
@@ -122,10 +120,10 @@ function specializationGetScheduleDoctorByDate() {
                     moreInfo = `
                         <div class="d-flex flex-column">
                                             <div>
-                                                <span class="d-block mt-2"> Chọn <i class="fa fa-hand-o-up" aria-hidden="true"></i> và đặt miễn phí</span>
+                                                <span class="d-block mt-2"> Choose <i class="fa fa-hand-o-up" aria-hidden="true"></i>  and book a free consultation</span>
                                             </div>
                                             <div style="border-top: 1px solid #ccc" class="d-flex flex-column">
-                                                <span class="d-block pt-3 pb-1" style="text-transform: uppercase">Address khám:</span>
+                                                <span class="d-block pt-3 pb-1" style="text-transform: uppercase">Address:</span>
                                                 <span class="d-block pb-1" style="border-bottom: 1px solid #ccc">${data.doctor.address}</span>
                                             </div>
                                             <span class="d-block pt-2">Price: 50 USD</span>
@@ -134,8 +132,9 @@ function specializationGetScheduleDoctorByDate() {
                 } else {
                     html = `
                             <div class="no-schedule">
-                                Bác sĩ "${data.doctor.name}" không có lịch khám trong ngày <b>${value}</b>. Xin lựa chọn
-                                những lịch khám tiếp theo.
+                               
+                                 Doctor "${data.doctor.name}" does not have an appointment on <b>${value}</b>. Please select the next examination schedule.
+
                             </div>
                     `;
                     moreInfo = '';
@@ -148,7 +147,7 @@ function specializationGetScheduleDoctorByDate() {
 
             },
             error: function(error) {
-                alertify.error('Có lỗi xảy ra, vui lòng thử lại sau!');
+                alertify.error('An error occurs, please try again later!!');
                 console.log(error)
             }
         });
@@ -234,7 +233,7 @@ function generatePostPagination(page) {
             $("#list-posts-client").append(html);
         },
         error: function(err) {
-            alertify.error('Có lỗi xảy ra, vui lòng thử lại sau');
+            alertify.error('An error occurs, please try again later!');
             console.log(err)
         }
     })
@@ -328,14 +327,14 @@ function handleBookingPageDoctorNormal(formData) {
         processData: false,
         success: function(data) {
             if (typeof (data.patient) === 'string') {
-                alert("Rất tiếc giờ hẹn khám bệnh này đã đủ bệnh nhân đặt khám, vui lòng chọn giờ khám khác.");
+                alert("Unfortunately, this appointment has enough patients booked, please choose a different time.");
                 window.location.reload(true);
             } else {
                 window.location.href = `${window.location.origin}/booking-info/${data.patient.id}`;
             }
         },
         error: function(error) {
-            alertify.error('Có lỗi xảy ra, vui lòng thử lại sau');
+            alertify.error('An error occurs, please try again later!');
             console.log(error);
         }
     });
@@ -348,7 +347,7 @@ function handleBookingPageDoctorWithoutFiles(data) {
         data: data,
         success: function(data) {
             if (typeof (data.patient) === 'string') {
-                alert("Rất tiếc giờ hẹn khám bệnh này đã đủ bệnh nhân đặt khám, vui lòng chọn giờ khám khác.");
+                alert("Unfortunately, this appointment has enough patients booked, please choose a different time.");
                 window.location.reload(true);
             } else {
                 window.location.href = `${window.location.origin}/booking-info/${data.patient.id}`;
@@ -356,7 +355,7 @@ function handleBookingPageDoctorWithoutFiles(data) {
 
         },
         error: function(error) {
-            alertify.error('Có lỗi xảy ra, vui lòng thử lại sau');
+            alertify.error('An error occurs, please try again later!');
             console.log(error);
         }
     });
@@ -423,7 +422,7 @@ function showModalBookingClinicPage() {
                 $('#modalBookingClinicDoctor').modal('show');
             },
             error: function(error) {
-                alertify.error('Có lỗi xảy ra, vui lòng thử lại sau!');
+                alertify.error('An error occurs, please try again later!!');
                 console.log(error);
             }
         })
@@ -491,7 +490,7 @@ function showModalBookingSpecializationPage() {
                 $('#modalBookingSpe').modal('show');
             },
             error: function(error) {
-                alertify.error('Có lỗi xảy ra, vui lòng thử lại sau!');
+                alertify.error('An error occurs, please try again later!!');
                 console.log(error);
             }
         })
@@ -539,10 +538,10 @@ function handleSubmitFeedback() {
             data: { data: data },
             success: function(data) {
                 console.log(data)
-                alert("Gửi phản hồi thành công!")
+                alert("Sending a Feedback succeeds!")
             },
             error: function(err) {
-                alertify.error('Có lỗi xảy ra, vui lòng thử lại sau');
+                alertify.error('An error occurs, please try again later!');
                 console.log(error);
             }
         })
@@ -573,7 +572,7 @@ function handleSearchHomepage() {
                     if (data.clinics.length === 0 && data.specializations.length === 0 && data.doctors.length === 0) {
                         html += `
                          <div class="child-info">
-                                Không tìm thấy kết quả tìm kiếm
+                               No search results found
                         </div>
                         `;
                     }
@@ -581,7 +580,7 @@ function handleSearchHomepage() {
                     data.doctors.forEach((doctor) => {
                         html += `
                          <div class="child-info">
-                                <a href="detail/doctor/${doctor.id}">Bác sĩ - ${doctor.name}</a>
+                                <a href="detail/doctor/${doctor.id}">Doctor - ${doctor.name}</a>
                         </div>
                         `;
                     });
@@ -589,7 +588,7 @@ function handleSearchHomepage() {
                     data.clinics.forEach((clinic) => {
                         html += `
                          <div class="child-info">
-                                <a href="detail/clinic/${clinic.id}">Phòng khám - ${clinic.name}</a>
+                                <a href="detail/clinic/${clinic.id}">Clinic - ${clinic.name}</a>
                         </div>
                         `;
                     });
@@ -597,7 +596,7 @@ function handleSearchHomepage() {
                     data.specializations.forEach((specialization) => {
                         html += `
                          <div class="child-info">
-                                <a href="detail/specialization/${specialization.id}">Chuyên khoa - ${specialization.name}</a>
+                                <a href="detail/specialization/${specialization.id}">Specialist - ${specialization.name}</a>
                         </div>
                         `;
                     });
@@ -607,7 +606,7 @@ function handleSearchHomepage() {
                     $('#show-info-search').append(html);
                 },
                 error: function(error) {
-                    alertify.error('Có lỗi xảy ra, vui lòng thử lại sau');
+                    alertify.error('An error occurs, please try again later!');
                     console.log(error);
                 }
             });
