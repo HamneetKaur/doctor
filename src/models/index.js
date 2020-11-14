@@ -13,26 +13,28 @@ if (config.use_env_variable) {
     sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
         host: process.env.DB_HOST,
         dialect: 'mysql',
-        operatorsAliases: false,
+        operatorsAliases: 0,
         dialectOptions: {
             dateStrings: true,
             typeCast: true,
             timezone: "+07:00"
         },
-        timezone: "+07:00"
+        timezone: "+07:00",
+        logging: false
     });
 
 } else {
     sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
         host: process.env.DB_HOST,
         dialect: 'mysql',
-        operatorsAliases: false,
+        operatorsAliases: 0,
         dialectOptions: {
             dateStrings: true,
             typeCast: true,
             timezone: "+07:00",
         },
         timezone: "+07:00",
+        logging: false
     });
 
     sequelize.authenticate().then(() => {
