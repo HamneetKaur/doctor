@@ -217,7 +217,6 @@ let getEditDoctor = async (req, res) => {
 
 let putUpdateDoctorWithoutFile = async (req, res) => {
     try {
-        console.log(req.body)
         let item = {
             id: req.body.id,
             name: req.body.nameDoctor,
@@ -378,10 +377,15 @@ let putUpdatePost = async (req, res) => {
     }
 };
 
-let getManageCreateScheduleForDoctorsPage = (req, res) => {
-    return res.render('main/users/admins/manageScheduleForDoctors.ejs', {
-        user: req.user
-    })
+let getManageCreateScheduleForDoctorsPage = async (req, res) => {
+    try {
+        return res.render('main/users/admins/manageScheduleForDoctors.ejs', {
+            user: req.user,
+        })
+    } catch (e) {
+        console.log(e);
+    }
+
 };
 
 let getInfoStatistical = async (req, res) => {

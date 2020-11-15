@@ -210,7 +210,6 @@ function generatePostPagination(page) {
         url: `${window.location.origin}/supporter/pagination/posts?page=${page}`,
         method: 'GET',
         success: function(data) {
-            console.log(data)
             $("#list-posts-client").empty();
             let html = '';
             data.posts.rows.forEach((post) => {
@@ -537,7 +536,6 @@ function handleSubmitFeedback() {
             url: `${window.location.origin}/feedback/create`,
             data: { data: data },
             success: function(data) {
-                console.log(data)
                 alert("Sending a Feedback succeeds!")
             },
             error: function(err) {

@@ -1,6 +1,6 @@
 import db from "./../models";
 import mailer from "./../config/mailer";
-import { transMailBookingNew, transMailBookingSuccess, transMailBookingFailed } from "../../lang/vi";
+import { transMailBookingNew, transMailBookingSuccess, transMailBookingFailed } from "../../lang/en";
 import helper from "../helper/client";
 
 
@@ -187,7 +187,7 @@ let createNewPatient = (data) => {
                     //update logs
                     let logs = {
                         patientId: patient.id,
-                        content: "Bệnh nhân đặt lịch từ hệ thống",
+                        content: "The patient made an appointment from the system ",
                         createdAt: Date.now()
                     };
 
@@ -201,7 +201,7 @@ let createNewPatient = (data) => {
 
                     let isEmailSend = await mailer.sendEmailNormal(patient.email, transMailBookingNew.subject, transMailBookingNew.template(dataSend));
                     if (!isEmailSend) {
-                        console.log("Có lỗi khi gửi email tới khách hàng email: " + patient.email);
+                        console.log("An error occurs when sending an email to: " + patient.email);
                         console.log(isEmailSend);
                     }
 

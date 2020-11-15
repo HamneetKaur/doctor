@@ -299,12 +299,13 @@ footer {
   background-color: #2a96a5; }
 
 .doctor-schedule .doctor-time {
+  font-size: 80%;
   border-radius: 5px;
   background-color: #ccc;
   padding: 5px;
-  margin: 20px 20px 10px 0;
+  margin: 20px 10px 10px 0;
   height: 32px;
-  width: 122px;
+  width: 110px;
   cursor: pointer;
   text-align: center; }
   .doctor-schedule .doctor-time:hover {
@@ -389,12 +390,13 @@ select#day-book {
     padding: 15px 15px 0 15px;
     font-size: 18px; }
   .content-specialization .each-doctor-spe .right-content .doctor-time {
+    font-size: 80%;
     border-radius: 5px;
     background-color: #ccc;
     padding: 9px;
-    margin: 20px 8px 10px 0;
+    margin: 20px 10px 10px 0;
     height: 40px;
-    width: 122px;
+    width: 110px;
     cursor: pointer;
     text-align: center; }
     .content-specialization .each-doctor-spe .right-content .doctor-time:hover {

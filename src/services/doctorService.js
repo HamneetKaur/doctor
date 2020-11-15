@@ -5,7 +5,7 @@ const Op = Sequelize.Op;
 import moment from "moment";
 import patientService from "./patientService";
 import mailer from "../config/mailer";
-import { transMailRemedy } from "../../lang/vi";
+import { transMailRemedy } from "../../lang/en";
 
 var Minizip = require('minizip-asm.js');
 var fs = require("fs");
@@ -394,7 +394,7 @@ let sendFormsForPatient = (id, files) => {
             let nameZip = `${Date.now()}-patientId-${id}.zip`;
             let pathZip = `${PATH_ZIP}/${nameZip}`;
             fs.writeFileSync(pathZip, new Buffer(mz.zip()));
-            let filename = `Thông-tin-phiếu-khám-bệnh-ngày-${patient.dateBooking}.zip`;
+            let filename = `Information-invoice-${patient.dateBooking}.zip`;
             let data = { doctor: doctor.name };
             await mailer.sendEmailWithAttachment(patient.email, transMailRemedy.subject, transMailRemedy.template(data), filename, pathZip);
             await patient.update({

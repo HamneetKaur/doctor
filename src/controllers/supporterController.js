@@ -107,16 +107,16 @@ let postChangeStatusPatient = async (req, res) => {
         let content = '';
         if (status === 'pending') {
             statusId = statusPendingId;
-            content = "Lịch hẹn mới đã được tiếp nhận";
+            content = "New appointments have been received";
         } else if (status === 'failed') {
             statusId = statusFailedId;
             if (req.body.reason) {
-                content = `Hủy với lí do - ${req.body.reason}`;
+                content = `Cancel with reason - ${req.body.reason}`;
             }
 
         } else if (status === 'confirmed') {
             statusId = statusSuccessId;
-            content = "Lịch hẹn đã đặt thành công";
+            content = "The appointment has been successfully booked";
         }
 
 

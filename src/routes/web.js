@@ -126,6 +126,7 @@ let initRoutes = (app) => {
     router.get('/doctor/manage/chart', auth.checkLoggedIn, doctor.getManageChart);
     router.post('/doctor/manage/create-chart', auth.checkLoggedIn, doctor.postCreateChart);
     router.post('/doctor/send-forms-to-patient', auth.checkLoggedIn, doctor.postSendFormsToPatient);
+    router.post('/doctor/auto-create-all-doctors-schedule', auth.checkLoggedIn, doctor.postAutoCreateAllDoctorsSchedule)
 
     router.get('/supporter/manage/customers', auth.checkLoggedIn, supporter.getManageCustomersPage);
     router.get('/supporter/get-new-patients', auth.checkLoggedIn, supporter.getNewPatients);

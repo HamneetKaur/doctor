@@ -218,6 +218,82 @@ let getInfoDoctorChart = (month) => {
     });
 };
 
+let createAllDoctorsSchedule = () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let timeArr = ['08:00 - 09:00', '09:00 - 10:00', '10:00 - 11:00', '11:00 - 12:00',
+                '13:00 - 14:00', '14:00 - 15:00', '15:00 - 16:00', '16:00 - 17:00'
+            ]
+            let threeDaySchedules = [];
+            for (let i = 0; i < 3; i++) {
+                let date = moment(new Date()).add(i, 'days').locale('en').format('DD/MM/YYYY');
+                threeDaySchedules.push(date);
+            }
+
+            let doctors = await db.User.findAll({
+                where: {
+                    roleId: 2
+                },
+                attributes: ['id', 'name'],
+                raw: true
+            });
+
+            //only create once
+            let isCreatedBefore = false;
+
+            //only check the first doctor with date and time
+            let check = await db.Schedule.findAll({
+                where: {
+                    doctorId: doctors[0].id,
+                    date: threeDaySchedules[0],
+                    time: timeArr[0]
+                }
+            })
+
+            if(check && check.length > 0) isCreatedBefore = true;
+
+            if(!isCreatedBefore){
+                if (doctors && doctors.length > 0) {
+                    await Promise.all(
+                        doctors.map((doctor) => {
+                            threeDaySchedules.map(day => {
+                                timeArr.map(async (time) => {
+                                    let schedule = {
+                                        doctorId: doctor.id,
+                                        date: day,
+                                        time: time,
+                                        maxBooking: 2,
+                                        sumBooking: 0
+                                    }
+                                    await db.Schedule.create(schedule);
+                                })
+                            })
+                        })
+                    )
+                }
+                resolve("Appointments are created successful (in 3 days). Please check your database (schedule table)")
+            }else {
+                resolve("Appointments are duplicated. Please check your database (schedule table)")
+            }
+        } catch (e) {
+            reject(e);
+        }
+    });
+}
+
+let getAllDoctorsSchedule = () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let schedules = await db.Schedule.findAll({
+                attributes: ['doctorId', 'date', 'time'],
+                raw: true
+            });
+            resolve(schedules)
+        } catch (e) {
+            reject(e);
+        }
+    })
+}
 module.exports = {
     createDoctor: createDoctor,
     getInfoDoctors: getInfoDoctors,
@@ -225,5 +301,7 @@ module.exports = {
     findUserById: findUserById,
     comparePassword: comparePassword,
     getInfoStatistical: getInfoStatistical,
-    getInfoDoctorChart: getInfoDoctorChart
+    getInfoDoctorChart: getInfoDoctorChart,
+    createAllDoctorsSchedule: createAllDoctorsSchedule,
+    getAllDoctorsSchedule: getAllDoctorsSchedule
 };

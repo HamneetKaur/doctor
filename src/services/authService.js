@@ -1,4 +1,4 @@
-import {tranRegisterEmail, tranForgotPassword} from "../../lang/vi";
+import {tranRegisterEmail, tranForgotPassword} from "../../lang/en";
 import {sendEmail} from "./../config/mailer";
 import userService from "./../services/userService";
 require('dotenv').config();

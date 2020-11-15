@@ -12,7 +12,6 @@ let initPassportLocal = () => {
         async (email, password, done) => {
             try {
                 await userService.findUserByEmail(email).then(async (user) => {
-                    console.log(user);
                     // if (!user.local.isActive)
                     //     return done(null, false, {message: tranLoginValidation.not_active_account(email)});
                     // if (!user || !await userService.comparePassword(password, user)) {

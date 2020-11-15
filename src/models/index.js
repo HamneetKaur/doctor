@@ -20,7 +20,7 @@ if (config.use_env_variable) {
             timezone: "+07:00"
         },
         timezone: "+07:00",
-        logging: false
+        logging: false,
     });
 
 } else {
@@ -34,11 +34,11 @@ if (config.use_env_variable) {
             timezone: "+07:00",
         },
         timezone: "+07:00",
-        logging: false
+        logging: false,
     });
 
     sequelize.authenticate().then(() => {
-        console.log('Connection has been established successfully.');
+        console.log('Connection to your databse has been established successfully.');
     }).catch(err => {
         console.error('Unable to connect to the database:', err);
     });

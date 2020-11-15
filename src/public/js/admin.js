@@ -1053,7 +1053,6 @@ function showModalSendForms() {
                 $('#btnSendFilesForms').attr('data-patient-id', patientId);
                 if (data.ExtraInfo) {
                     if (data.ExtraInfo.sendForms) {
-                        console.log(data.ExtraInfo.sendForms)
                         let images = JSON.parse(data.ExtraInfo.sendForms);
                         for (let [ key, value ] of Object.entries(images)) {
                             html += `
@@ -1172,7 +1171,6 @@ function statisticalAdmin(month) {
         url: `${window.location.origin}/admin/statistical`,
         data: { month: month },
         success: function(data) {
-            console.log(data);
             $('#sumPatient').text(data.patients.count);
             $('#sumDoctor').text(data.doctors.count);
             $('#sumPost').text(data.posts.count);

@@ -1,5 +1,5 @@
 import {check} from 'express-validator';
-import {tranRegister} from "../../lang/vi";
+import {tranRegister} from "../../lang/en";
 import userService from "./../services/userService";
 
 let validateRegisterUser = [
