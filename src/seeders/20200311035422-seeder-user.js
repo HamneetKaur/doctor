@@ -16,7 +16,7 @@ module.exports = {
             },
             {
                 name: 'Doctor - Evan',
-                email: 'doctor4@gmail.com',
+                email: 'doctor@gmail.com',
                 password: '$2a$07$Bq0hCq3kVrvKUHfMT0NJROmQkx09aEQkGlwBGEdw799YJvWqH1kuy', //123456
                 address: 'LA',
                 phone: '088456735',
@@ -38,7 +38,7 @@ module.exports = {
             },
             {
                 name: 'Doctor - Hary Pham',
-                email: 'doctor@gmail.com',
+                email: 'doctor10@gmail.com',
                 password: '$2a$07$Bq0hCq3kVrvKUHfMT0NJROmQkx09aEQkGlwBGEdw799YJvWqH1kuy', //123456
                 address: 'LA',
                 phone: '088456735',
