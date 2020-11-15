@@ -3,7 +3,7 @@ require('dotenv').config();
 
 let createPost = (data) => {
     request.post({
-        url: `${process.env.ELASTIC_HOST}/graduate_project/posts/${data.postId}`,
+        url: `${process.env.ELASTIC_HOST}/doctorcare_haryphamdev/posts/${data.postId}`,
         headers: {
             'Content-Type': 'application/json',
         },
@@ -18,7 +18,7 @@ let createPost = (data) => {
 
 let updatePost = (data) => {
     request.put({
-        url: `${process.env.ELASTIC_HOST}/graduate_project/posts/${data.postId}`,
+        url: `${process.env.ELASTIC_HOST}/doctorcare_haryphamdev/posts/${data.postId}`,
         headers: {
             'Content-Type': 'application/json',
         },
@@ -33,7 +33,7 @@ let updatePost = (data) => {
 
 let deletePost = (id) => {
     request.delete({
-        url: `${process.env.ELASTIC_HOST}/graduate_project/posts/${id}`,
+        url: `${process.env.ELASTIC_HOST}/doctorcare_haryphamdev/posts/${id}`,
         headers: {
             'Content-Type': 'application/json',
         },
@@ -73,7 +73,7 @@ let findPostsByTerm = (keyword) => {
             };
 
         request.get({
-            url: `${process.env.ELASTIC_HOST}/graduate_project/posts/_search`,
+            url: `${process.env.ELASTIC_HOST}/doctorcare_haryphamdev/posts/_search`,
             headers: {
                 'Content-Type': 'application/json',
             },
