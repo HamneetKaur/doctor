@@ -309,13 +309,14 @@ let deleteSpecializationById = async (req, res) => {
 
 let getManageBotPage = async (req, res) => {
     try {
-        let entities = await chatFBServie.getWitEntitiesWithExpression();
-        let entityName = await chatFBServie.getWitEntities();
-        return res.render('main/users/admins/manageBot.ejs', {
-            user: req.user,
-            entities: entities,
-            entityName: entityName
-        });
+        return res.send("Hello word. You'll need a witAI account. More info: please comment on my youtube channel.")
+        // let entities = await chatFBServie.getWitEntitiesWithExpression();
+        // let entityName = await chatFBServie.getWitEntities();
+        // return res.render('main/users/admins/manageBot.ejs', {
+        //     user: req.user,
+        //     entities: entities,
+        //     entityName: entityName
+        // });
     } catch (e) {
         console.log(e);
     }
